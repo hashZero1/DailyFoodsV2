@@ -14,6 +14,7 @@
     "@cloudinary/url-gen": "^1.19.0",
     "@headlessui/react": "^1.7.18",
     "axios": "^1.6.7",
+    "dompurify": "^3.2.4",
     "dotenv": "^16.4.5",
     "firebase": "^10.8.1",
     "flowbite-react": "^0.7.3",
