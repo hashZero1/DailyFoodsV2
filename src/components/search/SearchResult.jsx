@@ -20,7 +20,7 @@ const SearchResult = () => {
     <div className="flex flex-wrap justify-center mt-10">
     {searchData.results?.map((dt) => (
       <motion.div whileHover={{ scale: 1.02 }} key={dt.id} className="p-2">
-      <div className="max-w-[20rem] m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow ">
+      <div className="max-w-[20rem] m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow-sm ">
       <div className="p-4 rounded-t-lg bg-white">
                  <img
                    className="w-full h-full object-contain"

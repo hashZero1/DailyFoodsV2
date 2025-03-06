@@ -31,7 +31,7 @@ const TrendingSection = () => {
                   'w-1/2 lg:w-1/3 rounded-lg m-2 py-2 lg:py-4 text-sm lg:text-md font-medium leading-5',
                   'bg-black ',
                   selected
-                    ? 'bg-red-600 text-gray-100  border-0 shadow'
+                    ? 'bg-red-600 text-gray-100  border-0 shadow-sm'
                     : 'text-blue-100  hover:bg-white opacity-85 border-0 hover:text-gray-800'
                 )
               }

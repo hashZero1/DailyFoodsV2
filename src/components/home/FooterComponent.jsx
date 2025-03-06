@@ -13,7 +13,7 @@ const FooterComponent = () => {
      
   return (
     <footer className=" mt-20 bg-black ">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+      <div className="w-full max-w-(--breakpoint-xl) mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
         <a href="/" className="flex items-center mb-4 sm:mb-0 cursor-pointer w-[7em] h-[35px] lg:w-[8em] lg:h-[42px]">
               <AdvancedImage className="w-full h-full" cldImg={myImage} plugins={[responsive(), placeholder()]}></AdvancedImage>

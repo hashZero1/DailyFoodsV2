@@ -16,7 +16,7 @@ const RandomizedRecipe = () => {
     <>
     <div className="flex border-b border-2 w-3/4 mx-auto mt-5 border-white opacity-40"/>
         <div className='flex justify-center mt-10'>
-      <motion.div whileHover={{ scale: 1.02 }} key={randomRecipe.id} className='max-w-sm lg:max-w-4xl m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow'>
+      <motion.div whileHover={{ scale: 1.02 }} key={randomRecipe.id} className='max-w-sm lg:max-w-4xl m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow-sm'>
         <div className='relative'>
         <h1 className='text-gray-800 p-3 my-auto bg-white bg-opacity-40 text-xl lg:text-2xl font-semibold rounded-lg capitalize'>today's recipe for you</h1>
         <svg

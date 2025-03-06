@@ -18,7 +18,7 @@ const RecipeComponent = ({bulkRecipe}) => {
         <div className='flex flex-wrap justify-center'>
         {bulkRecipe?.map(dt => (
              <motion.div whileHover={{ scale: 1.02 }} key={dt.id} className="p-2">
-             <div className="relative lg:max-w-[20rem] m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow ">
+             <div className="relative lg:max-w-[20rem] m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow-sm ">
              <svg
                   xmlns="http://www.w3.org/2000/svg"
                   onClick={() => {

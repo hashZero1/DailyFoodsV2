@@ -4,7 +4,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 export const MainPageSkeleton = ({cards}) => {
   return (
     Array(cards).fill(0).map((item,i) => <div key={i} className="p-2">
-    <div className="relative lg:w-[20rem] h-[25em] m-2 lg:m-2 bg-opacity-50 bg-white rounded-lg shadow ">
+    <div className="relative lg:w-[20rem] h-[25em] m-2 lg:m-2 bg-opacity-50 bg-white rounded-lg shadow-sm ">
    
       <div className="p-4 rounded-t-lg bg-white">
         <Skeleton
