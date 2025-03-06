@@ -58,7 +58,7 @@ const SearchSuggestions = () => {
           onChange={(event) => setQuery(event.target.value)}
         />
         <Link onClick={() => searchRecipe()} to={`/search/:${searchData}`}>
-          <button className="group/button relative inline-flex ml-4 h-13 2xl:h-14 w-16 items-center justify-center overflow-hidden rounded-full bg-red-500 font-medium text-white transition-all duration-300 hover:w-48">
+          <button className="group/button relative inline-flex ml-4 h-13 2xl:h-14 w-16 items-center justify-center overflow-hidden rounded-full bg-red-500 font-medium text-white transition-all duration-300 hover:w-48 cursor-pointer">
             <p className="inline-flex whitespace-nowrap text-md opacity-0 transition-all duration-200 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
               Search Recipe
             </p>
@@ -78,7 +78,7 @@ const SearchSuggestions = () => {
             </div>
           </button>
         </Link>
-        <Combobox.Options className="absolute left-4 lg:left-[16.5em] text-left top-12 lg:top-[4em] h-80 overflow-y-scroll no-scrollbar z-40">
+        <Combobox.Options className="absolute left-0 right-20 text-left top-12 lg:top-[4em] w-[70%] md:w-[65%] lg:w-[35%] mx-auto h-80 overflow-y-scroll yes-scrollbar z-40 rounded-xl">
           {query !== "" && (
             <Combobox.Option
               onChange={() => setSearchData(query)}
@@ -105,7 +105,7 @@ const SearchSuggestions = () => {
                 onChange={() => setSearchData(recipe)}
                 value={recipe}
                 className={({ active }) =>
-                  `relative min-w-[18.4em] lg:min-w-[40em] text-md bg-gray-100 lg:text-lg px-5 py-2 capitalize  ${
+                  `relative  text-md bg-gray-100 lg:text-lg px-5 py-2 capitalize  ${
                     active
                       ? "bg-red-500 cursor-pointer text-white"
                       : "text-gray-900"

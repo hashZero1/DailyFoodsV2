@@ -27,7 +27,6 @@ const RandomizedRecipe = () => {
 
   return (
     <div className="p-2">
-      <div className="flex " />
       <div className="flex  items-center bg-[#171717] max-w-[90rem] mx-auto rounded-xl">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +47,7 @@ const RandomizedRecipe = () => {
         <motion.div
           whileHover={{ scale: 1.02 }}
           key={randomRecipe.id}
-          className="max-w-sm lg:max-w-4xl m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow-sm"
+          className=" w-full md:max-w-md lg:max-w-4xl m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow-sm"
         >
           <div className="flex p-2 lg:p-3 relative">
             <button>
@@ -69,7 +68,7 @@ const RandomizedRecipe = () => {
                 />
               </svg>
             </button>
-            <div className="p-2 rounded-lg w-80 bg-gray-100">
+            <div className="rounded-lg w-[50%] lg:w-80">
               <img
                 className="w-full h-full object-contain rounded-lg"
                 src={randomRecipe.image}
@@ -78,7 +77,7 @@ const RandomizedRecipe = () => {
             </div>
             <div className="min-h-min px-2 lg:p-5">
               <h5 className="mb-2 text-lg lg:text-xl font-bold tracking-normal text-gray-700">
-                {randomRecipe.title}
+                {randomRecipe.title ? randomRecipe.title : "Not available"}
               </h5>
               <p className="my-2 lg:my-4 h-10 overflow-y-auto no-scrollbar font-normal text-gray-700 dark:text-gray-600">
                 {time} {randomRecipe.readyInMinutes} minutes
