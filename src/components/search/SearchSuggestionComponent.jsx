@@ -50,15 +50,15 @@ const SearchSuggestions = () => {
           }
         }}
         as="div"
-        className="text-center mt-6 relative z-20"
+        className="text-center -mt-4 2xl:mt-6 relative z-20"
       >
         <Combobox.Input
-          className="px-4 py-2 lg:px-6 lg:py-4 w-[72%] lg:w-[40%] text-lg lg:text-xl bg-gray-50  rounded-full"
+          className="px-4 py-2 lg:px-6 lg:py-3 2xl:py-4 w-[72%] lg:w-[40%] text-lg lg:text-xl bg-gray-50  rounded-full"
           placeholder="Search Recipe..."
           onChange={(event) => setQuery(event.target.value)}
         />
         <Link onClick={() => searchRecipe()} to={`/search/:${searchData}`}>
-          <button className="group/button relative inline-flex ml-4 h-14 w-16 items-center justify-center overflow-hidden rounded-full bg-red-500 font-medium text-white transition-all duration-300 hover:w-44">
+          <button className="group/button relative inline-flex ml-4 h-13 2xl:h-14 w-16 items-center justify-center overflow-hidden rounded-full bg-red-500 font-medium text-white transition-all duration-300 hover:w-44">
             <p className="inline-flex whitespace-nowrap text-md opacity-0 transition-all duration-200 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
               Search Recipe
             </p>

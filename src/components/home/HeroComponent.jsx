@@ -2,6 +2,7 @@ import SearchSuggestions from "../search/SearchSuggestionComponent";
 import NavComponent from "./NavComponent";
 import Lottie from "lottie-react";
 import animation from "../../assets/animation.json";
+import animationpan from "../../assets/animationpan.json";
 
 const HeroComponent = () => {
   return (
@@ -17,20 +18,20 @@ const HeroComponent = () => {
       }}
     >
       <NavComponent />
-      <div className="mt-10 py-10 mx-auto w-full lg:w-[50%]">
-        <h1 className="text-center text-[6.8rem] text-gray-50 font-bold uppercase">
+      <div className=" 2xl:mt-10 py-10 mx-auto w-full lg:w-[50%]">
+        <h1 className="text-center text-5xl lg:text-7xl 2xl:text-[6.2rem] text-gray-50 font-bold uppercase">
           Hey there! 👀
         </h1>
-        <h2 className="text-center tracking-widest text-2xl lg:text-3xl text-red-50  mb-10">
+        <h2 className="text-center tracking-widest text-2xl lg:text-xl 2xl:text-3xl text-red-50 mb-4 2xl:mb-10 lg:mt-4 2xl:mt-6">
           What are you planning on making today? 😋
         </h2>
         <hr />
       </div>
 
       <SearchSuggestions />
-      {/* <div className="w-[35%] mx-auto -mt-14">
-        <Lottie animationData={animation} />
-      </div> */}
+      <div className="w-full md:w-[80%] lg:w-[42%] 2xl:w-[38%] mx-auto -mt-12">
+        <Lottie animationData={animationpan} />
+      </div>
     </section>
   );
 };
