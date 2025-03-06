@@ -58,17 +58,22 @@ const SearchSuggestions = () => {
           onChange={(event) => setQuery(event.target.value)}
         />
         <Link onClick={() => searchRecipe()} to={`/search/:${searchData}`}>
-          <button className="group/button relative inline-flex ml-4 h-13 2xl:h-14 w-16 items-center justify-center overflow-hidden rounded-full bg-red-500 font-medium text-white transition-all duration-300 hover:w-44">
+          <button className="group/button relative inline-flex ml-4 h-13 2xl:h-14 w-16 items-center justify-center overflow-hidden rounded-full bg-red-500 font-medium text-white transition-all duration-300 hover:w-48">
             <p className="inline-flex whitespace-nowrap text-md opacity-0 transition-all duration-200 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
               Search Recipe
             </p>
             <div className="absolute right-5 ">
               <svg
-                viewBox="0 0 15 15"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 fill-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-6"
               >
-                <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"></path>
+                <path
+                  fillRule="evenodd"
+                  d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
           </button>
