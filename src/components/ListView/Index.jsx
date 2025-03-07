@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ToggleView from "./ToggleView";
 import ListView from "./ListView";
 import GridView from "./GridView";
+import { CartContext } from "../../context/CartContext";
 
 const RecipeLayout = ({ bulkRecipe }) => {
   const [layout, setLayout] = useState(true);
+  const { addItemToCart, notify } = useContext(CartContext);
 
   const handleToggle = () => {
     const newState = !layout;
@@ -17,9 +19,17 @@ const RecipeLayout = ({ bulkRecipe }) => {
       </div>
       <div className="mt-11">
         {layout ? (
-          <GridView bulkRecipe={bulkRecipe} />
+          <GridView
+            bulkRecipe={bulkRecipe}
+            addItemToCart={addItemToCart}
+            notify={notify}
+          />
         ) : (
-          <ListView bulkRecipe={bulkRecipe} />
+          <ListView
+            bulkRecipe={bulkRecipe}
+            addItemToCart={addItemToCart}
+            notify={notify}
+          />
         )}
       </div>
     </div>

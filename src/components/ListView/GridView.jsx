@@ -2,7 +2,16 @@ import React from "react";
 import DOMPurify from "dompurify";
 import DetailsPageComponent from "../home/DetailsPageComponent";
 
-const Product = ({ key, id, title, description, diet, productImage }) => {
+const Product = ({
+  key,
+  id,
+  title,
+  description,
+  diet,
+  productImage,
+  addItemToCart,
+  notify,
+}) => {
   return (
     <div class="relative flex flex-col justify-between m-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full md:w-[40%] lg:w-96">
       <div>
@@ -30,10 +39,10 @@ const Product = ({ key, id, title, description, diet, productImage }) => {
         </div>
         <div class="p-4">
           <div class="mb-4 flex ">
-            <span className="rounded-full mr-1 bg-gray-500 py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm  text-center">
+            <span className="rounded-full mr-1 bg-green-600 capitalize py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm  text-center">
               {diet[0]}
             </span>
-            <span className="rounded-full bg-gray-500 py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm  text-center">
+            <span className="rounded-full bg-gray-700 capitalize py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm  text-center">
               {diet[1]}
             </span>
           </div>
@@ -55,7 +64,7 @@ const Product = ({ key, id, title, description, diet, productImage }) => {
     </div>
   );
 };
-const GridView = ({ bulkRecipe }) => {
+const GridView = ({ bulkRecipe, addItemToCart, notify }) => {
   return (
     <div className=" flex flex-wrap justify-center  ">
       {bulkRecipe.map((product) => (
@@ -63,6 +72,8 @@ const GridView = ({ bulkRecipe }) => {
           key={product.id}
           id={product}
           title={product.title}
+          addItemToCart={addItemToCart}
+          notify={notify}
           description={product.summary}
           diet={product.diets}
           productImage={product.image}
