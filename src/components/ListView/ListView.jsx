@@ -30,7 +30,7 @@ const Product = ({ key, id, title, description, diet, productImage }) => {
             />
           </div>
           <div>
-            <button className="px-6 py-1 lg:px-4 lg:py-1 bg-[#171717] text-white font-semibold hover:bg-gray-800 hover:text-white transition-all rounded-lg">
+            <button className="px-6 py-1 lg:px-6 lg:py-3 bg-[#171717] text-white font-semibold hover:bg-gray-200 hover:text-red-500 transition-all rounded-lg">
               <DetailsPageComponent recipe={id} />
             </button>
           </div>
