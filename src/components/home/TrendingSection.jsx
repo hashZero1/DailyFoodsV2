@@ -3,6 +3,7 @@ import { Tab } from "@headlessui/react";
 import RecipeComponent from "./RecipeComponent";
 import { ApiContext } from "../../context/ApiContext";
 import { MainPageSkeleton } from "../skeletons/MainPageSkeleton";
+import RecipeLayout from "../ListView/Index";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -46,7 +47,7 @@ const TrendingSection = () => {
             {loading ? (
               <MainPageSkeleton cards={10} />
             ) : (
-              <RecipeComponent bulkRecipe={bulkRecipe} />
+              <RecipeLayout bulkRecipe={bulkRecipe} />
             )}
           </div>
         </Tab.Panel>
@@ -55,7 +56,7 @@ const TrendingSection = () => {
             {loading ? (
               <MainPageSkeleton cards={10} />
             ) : (
-              <RecipeComponent bulkRecipe={randomData} />
+              <RecipeLayout bulkRecipe={randomData} />
             )}
           </div>
         </Tab.Panel>

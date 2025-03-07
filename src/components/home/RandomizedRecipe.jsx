@@ -26,7 +26,7 @@ const RandomizedRecipe = () => {
   const { addItemToCart, notify } = useContext(CartContext);
 
   return (
-    <div className="p-2">
+    <div className="p-2 mt-20">
       <div className="flex  items-center bg-[#171717] max-w-[90rem] mx-auto rounded-xl">
         <svg
           xmlns="http://www.w3.org/2000/svg"
