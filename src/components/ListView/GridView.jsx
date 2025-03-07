@@ -1,6 +1,7 @@
 import React from "react";
 import DOMPurify from "dompurify";
 import DetailsPageComponent from "../home/DetailsPageComponent";
+import ErrorScreen from "../skeletons/ErrorScreen";
 
 const Product = ({
   key,
@@ -66,19 +67,39 @@ const Product = ({
 };
 const GridView = ({ bulkRecipe, addItemToCart, notify }) => {
   return (
-    <div className=" flex flex-wrap justify-center  ">
-      {bulkRecipe.map((product) => (
-        <Product
-          key={product.id}
-          id={product}
-          title={product.title}
-          addItemToCart={addItemToCart}
-          notify={notify}
-          description={product.summary}
-          diet={product.diets}
-          productImage={product.image}
-        />
-      ))}
+    // <div className=" flex flex-wrap justify-center  ">
+    //   {bulkRecipe?.map((product) => (
+    //     <Product
+    //       key={product.id}
+    //       id={product}
+    //       title={product.title}
+    //       addItemToCart={addItemToCart}
+    //       notify={notify}
+    //       description={product.summary}
+    //       diet={product.diets}
+    //       productImage={product.image}
+    //     />
+    //   ))}
+    // </div>
+    <div>
+      {bulkRecipe ? (
+        <div className="flex flex-wrap justify-center">
+          {bulkRecipe?.map((product) => (
+            <Product
+              key={product.id}
+              id={product}
+              title={product.title}
+              addItemToCart={addItemToCart}
+              notify={notify}
+              description={product.summary}
+              diet={product.diets}
+              productImage={product.image}
+            />
+          ))}
+        </div>
+      ) : (
+        <ErrorScreen />
+      )}
     </div>
   );
 };
