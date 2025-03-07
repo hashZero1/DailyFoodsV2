@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { Tab } from "@headlessui/react";
-import RecipeComponent from "./RecipeComponent";
 import { ApiContext } from "../../context/ApiContext";
 import { MainPageSkeleton } from "../skeletons/MainPageSkeleton";
 import RecipeLayout from "../ListView/Index";
@@ -21,17 +20,17 @@ const TrendingSection = () => {
 
   return (
     <Tab.Group>
-      <Tab.List className="relative mx-2 lg:mx-0 mt-10 lg:p-10 flex lg:py-5 items-center lg:text-xl lg:mt-4 text-gray-50">
-        <div className="mt-10 w-full flex justify-center">
+      <Tab.List className="relative xl:max-w-[90%] 2xl:max-w-[90rem] px-2 xl:px-0 mx-auto mt-10 md:mt-32 flex items-center  text-gray-50">
+        <div className=" w-full flex justify-center">
           {headings.map((category) => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
-                  "w-1/2 lg:w-1/3 rounded-lg m-2 py-2 lg:py-4 text-sm lg:text-md font-medium leading-5",
+                  "py-4 w-full md:py-6 cursor-pointer text-md md:text-2xl xl:text-3xl leading-5",
                   "bg-black ",
                   selected
-                    ? "bg-red-600 text-gray-100  border-0 shadow-sm"
+                    ? "bg-red-600 text-gray-100"
                     : "text-blue-100  hover:bg-gray-400 opacity-85 border-0 hover:text-gray-800"
                 )
               }

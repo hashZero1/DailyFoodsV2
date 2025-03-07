@@ -29,7 +29,7 @@ const spanTransition = {
 
 const ToggleView = ({ handleToggle, layout }) => {
   return (
-    <div className="flex px-2 lg:px-0 justify-end mx-auto xl:max-w-[90%] 2xl:max-w-[90rem] relative">
+    <div className="flex px-2 xl:px-0 justify-end mx-auto xl:max-w-[90%] 2xl:max-w-[90rem] relative">
       <hr className="h-px mt-14 absolute w-full  border-2 " />
 
       <div className="relative w-24 ">
