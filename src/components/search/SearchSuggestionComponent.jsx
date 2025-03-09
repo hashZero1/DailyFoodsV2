@@ -27,9 +27,9 @@ const SearchSuggestions = () => {
     "rolls",
     "pancake",
   ]);
-  const [activePerson, setActivePerson] = useState(null);
+  const [activeRecipe, setActiveRecipe] = useState(null);
 
-  const filteredPeople =
+  const filteredRecipe =
     query === ""
       ? recipes
       : recipes.filter((recipe) =>
@@ -39,9 +39,9 @@ const SearchSuggestions = () => {
   return (
     <div>
       <Combobox
-        value={activePerson}
+        value={activeRecipe}
         onChange={(recipe) => {
-          setActivePerson(recipe);
+          setActiveRecipe(recipe);
           setSearchData(recipe);
 
           // Attach to list of recipes
@@ -57,7 +57,7 @@ const SearchSuggestions = () => {
           placeholder="Search Recipe..."
           onChange={(event) => setQuery(event.target.value)}
         />
-        <Link onClick={() => searchRecipe()} to={`/search/:${searchData}`}>
+        <Link onClick={searchRecipe} to={`/search/:${searchData}`}>
           <button className="group/button relative inline-flex ml-4 h-13 2xl:h-14 w-16 items-center justify-center overflow-hidden rounded-full bg-red-500 font-medium text-white transition-all duration-300 hover:w-48 cursor-pointer">
             <p className="inline-flex whitespace-nowrap text-md opacity-0 transition-all duration-200 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
               Search Recipe
@@ -98,7 +98,7 @@ const SearchSuggestions = () => {
               Create new recipe: {query}
             </Combobox.Option>
           )}
-          {filteredPeople.map((recipe) => {
+          {filteredRecipe.map((recipe) => {
             return (
               <Combobox.Option
                 key={recipe}

@@ -2,6 +2,8 @@ import React from "react";
 import DOMPurify from "dompurify";
 import DetailsPageComponent from "../home/DetailsPageComponent";
 import ErrorScreen from "../skeletons/ErrorScreen";
+import path from "path";
+import { useLocation } from "react-router-dom";
 
 const Product = ({
   key,
@@ -65,26 +67,16 @@ const Product = ({
     </div>
   );
 };
-const GridView = ({ bulkRecipe, addItemToCart, notify }) => {
+const GridView = ({ bulkRecipe, addItemToCart, notify, searchData }) => {
+  const location = useLocation();
+  const { pathname } = location;
+  const dataToRender = pathname === "/" ? bulkRecipe : searchData.results;
+
   return (
-    // <div className=" flex flex-wrap justify-center  ">
-    //   {bulkRecipe?.map((product) => (
-    //     <Product
-    //       key={product.id}
-    //       id={product}
-    //       title={product.title}
-    //       addItemToCart={addItemToCart}
-    //       notify={notify}
-    //       description={product.summary}
-    //       diet={product.diets}
-    //       productImage={product.image}
-    //     />
-    //   ))}
-    // </div>
     <div>
-      {bulkRecipe ? (
+      {dataToRender ? (
         <div className="flex flex-wrap justify-center">
-          {bulkRecipe?.map((product) => (
+          {dataToRender?.map((product) => (
             <Product
               key={product.id}
               id={product}

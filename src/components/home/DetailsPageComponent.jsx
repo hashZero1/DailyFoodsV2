@@ -1,7 +1,7 @@
 import { Drawer } from "vaul";
 
 export default function DetailsPageComponent({ recipe }) {
-  const Nameless = () => {
+  const StepInstructions = () => {
     const anslyzedIns = recipe.analyzedInstructions[0]?.steps;
     return anslyzedIns?.map((dt) => (
       <li className="ml-5" key={dt.number}>
@@ -66,10 +66,10 @@ export default function DetailsPageComponent({ recipe }) {
                   Step by Steps Intructions :
                 </h3>
                 <ul className="leading-relaxed tracking-wide lg:text-lg list-disc ">
-                  {!recipe.analyzedInstructions ? (
-                    "Not Available"
+                  {recipe.analyzedInstructions ? (
+                    <StepInstructions />
                   ) : (
-                    <Nameless />
+                    "Not Available"
                   )}
                 </ul>
               </div>

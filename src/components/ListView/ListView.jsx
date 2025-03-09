@@ -2,6 +2,7 @@ import React from "react";
 import DOMPurify from "dompurify";
 import DetailsPageComponent from "../home/DetailsPageComponent";
 import ErrorScreen from "../skeletons/ErrorScreen";
+import { useLocation } from "react-router-dom";
 
 const Product = ({
   key,
@@ -50,12 +51,15 @@ const Product = ({
   );
 };
 
-const ListView = ({ bulkRecipe, addItemToCart, notify }) => {
+const ListView = ({ bulkRecipe, addItemToCart, notify, searchData }) => {
+  const location = useLocation();
+  const { pathname } = location;
+  const dataToRender = pathname === "/" ? bulkRecipe : searchData.results;
   return (
     <div>
-      {bulkRecipe ? (
+      {dataToRender ? (
         <div className=" mx-4 flex flex-wrap m-8">
-          {bulkRecipe?.map((product) => (
+          {dataToRender?.map((product) => (
             <Product
               key={product.id}
               id={product}
