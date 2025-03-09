@@ -16,7 +16,7 @@ const Product = ({
   notify,
 }) => {
   return (
-    <div class="relative flex flex-col justify-between m-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full md:w-[40%] lg:w-96">
+    <div class="relative flex flex-col justify-between m-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full md:w-[40%] xl:w-96">
       <div>
         <button
           onClick={() => {
@@ -38,11 +38,11 @@ const Product = ({
           </svg>
         </button>
         <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-          <img src={productImage} alt={title} />
+          <img className="w-full object-cover" src={productImage} alt={title} />
         </div>
         <div class="p-4">
-          <div class="mb-4 flex ">
-            <span className="rounded-full mr-1 bg-green-600 capitalize py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm  text-center">
+          <div class="mb-4 flex flex-wrap md:flex-nowrap">
+            <span className="rounded-full mr-1 bg-green-600 capitalize py-0.5 px-2.5 h-[22px] border border-transparent text-xs text-white mb-1 md:mb-0 transition-all shadow-sm  text-center">
               {diet[0]}
             </span>
             <span className="rounded-full bg-gray-700 capitalize py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm  text-center">

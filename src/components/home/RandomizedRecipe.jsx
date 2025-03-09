@@ -27,22 +27,23 @@ const RandomizedRecipe = () => {
 
   return (
     <div className="p-2 mt-20">
-      <div className="flex  items-center bg-[#171717] max-w-[90rem] mx-auto rounded-xl">
+      <div className="flex items-center max-w-[90rem] mx-auto ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="size-6 ml-5"
+          className="size-6 md:size-10 ml-5"
         >
           <path
-            className="fill-white"
+            className="fill-gray-500 "
             d="M9.375 3a1.875 1.875 0 0 0 0 3.75h1.875v4.5H3.375A1.875 1.875 0 0 1 1.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0 1 12 2.753a3.375 3.375 0 0 1 5.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 1 0-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3ZM11.25 12.75H3v6.75a2.25 2.25 0 0 0 2.25 2.25h6v-9ZM12.75 12.75v9h6.75a2.25 2.25 0 0 0 2.25-2.25v-6.75h-9Z"
           />
         </svg>
-        <h1 className="text-gray-100 p-4  text-xl lg:text-2xl font-semibold  capitalize">
+        <h1 className="text-gray-400 p-4  text-2xl lg:text-4xl font-black capitalize">
           today's recipe for you
         </h1>
       </div>
+      <hr className="max-w-[88rem] border-2 mx-auto" />
       <div className="flex justify-center mt-10">
         <motion.div
           whileHover={{ scale: 1.02 }}
