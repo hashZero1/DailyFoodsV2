@@ -3,14 +3,13 @@ import NavComponent from "./NavComponent";
 import Lottie from "lottie-react";
 import animation from "../../assets/animation.json";
 import animationpan from "../../assets/animationpan.json";
-
+import hero from "../../assets/hero.jpg";
 const HeroComponent = () => {
   return (
     <section
       className="min-h-svh "
       style={{
-        background:
-          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(/src/assets/hero.jpg) ",
+        background: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${hero})`,
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
