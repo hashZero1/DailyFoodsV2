@@ -3,7 +3,7 @@ import NavComponent from "./NavComponent";
 import Lottie from "lottie-react";
 import animation from "../../assets/animation.json";
 import animationpan from "../../assets/animationpan.json";
-import hero from "../../assets/hero.jpg";
+import hero from "../../assets/hero.webp";
 const HeroComponent = () => {
   return (
     <section
