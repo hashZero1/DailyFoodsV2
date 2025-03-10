@@ -10,7 +10,7 @@ const FooterComponent = () => {
             to="/"
             className="flex items-center mb-4 sm:mb-0 cursor-pointer w-[7em] h-[35px] lg:w-[8em] lg:h-[42px]"
           >
-            <img src={logo} alt="logo" />
+            <img className="w-full" src={logo} alt="logo" />
           </Link>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>

@@ -61,7 +61,7 @@ export const Cart = ({ toggle, handleToggle }) => {
                     <div className="flex flex-col-reverse ">
                       <div className="w-40 ">
                         <img
-                          className="rounded-xl object-fill"
+                          className="w-full rounded-xl object-fill"
                           src={image}
                           alt={image}
                         />
