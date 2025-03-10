@@ -13,7 +13,10 @@ export default function DetailsPageComponent({ recipe }) {
   return (
     <Drawer.Root shouldScaleBackground>
       <Drawer.Trigger asChild>
-        <button className="border-0 hover:border-0 px-2 cursor-pointer">
+        <button
+          className="border-0 hover:border-0 px-2 cursor-pointer"
+          aria-label="show-details"
+        >
           Show Details
         </button>
       </Drawer.Trigger>

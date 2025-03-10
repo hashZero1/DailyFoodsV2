@@ -28,9 +28,9 @@ const TrendingSection = () => {
               className={({ selected }) =>
                 classNames(
                   "py-4 w-full md:py-6 cursor-pointer text-md md:text-2xl xl:text-3xl leading-5",
-                  "bg-black ",
+                  "bg-black text-white",
                   selected
-                    ? "bg-red-600 text-gray-100"
+                    ? "bg-red-600 text-white"
                     : "text-blue-100  hover:bg-gray-400 opacity-85 border-0 hover:text-gray-800"
                 )
               }

@@ -24,6 +24,7 @@ const Product = ({
             notify();
           }}
           className="z-10 absolute h-12 w-12 m-2 -top-4 -right-4 text-gray-50 p-2 bg-red-600 text-red hover:bg-gray-800 hover:text-white transition-all rounded-full cursor-pointer "
+          aria-label="add-recipe"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +61,10 @@ const Product = ({
       </div>
 
       <div class=" p-4">
-        <button className="px-6 py-1 lg:px-6 lg:py-3 bg-[#171717] text-white font-semibold hover:bg-gray-200 hover:text-red-500 transition-all rounded-lg">
+        <button
+          className="px-6 py-1 lg:px-6 lg:py-3 bg-[#171717] text-white font-semibold hover:bg-gray-200 hover:text-red-500 transition-all rounded-lg"
+          aria-label="details-page"
+        >
           <DetailsPageComponent recipe={id} />
         </button>
       </div>

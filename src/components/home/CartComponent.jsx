@@ -44,7 +44,8 @@ export const Cart = ({ toggle, handleToggle }) => {
                 Your list is empty.
               </h1>
               <p className="p-2">
-                Your favourite recipe is waiting. Hurry up – and start saving your favourite recipes, So you can enjoy making it later.
+                Your favourite recipe is waiting. Hurry up – and start saving
+                your favourite recipes, So you can enjoy making it later.
               </p>
             </div>
           ) : (
@@ -72,13 +73,15 @@ export const Cart = ({ toggle, handleToggle }) => {
                     <div className="m-4 flex justify-evenly">
                       <button
                         className=" w-full p-0 bg-red-600 text-white font-semibold hover:bg-gray-50 hover:text-black rounded-xl hover:border-0"
+                        aria-label="details-page"
                       >
-                         <DetailsPageComponent recipe={item}/>
+                        <DetailsPageComponent recipe={item} />
                       </button>
-                     
+
                       <button
                         onClick={() => deleteItemCart(item)}
                         className="ml-4 w-full bg-gray-50 text-black font-semibold hover:bg-red-600 hover:text-white rounded-xl hover:border-0"
+                        aria-label="delete"
                       >
                         Delete
                       </button>

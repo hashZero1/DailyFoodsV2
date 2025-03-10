@@ -34,7 +34,11 @@ const ToggleView = ({ handleToggle, layout }) => {
 
       <div className="relative w-24 ">
         <div className="bg-red-500  relative flex justify-between px-2.5 py-2.5 rounded-lg">
-          <motion.button className="cursor-pointer" onClick={handleToggle}>
+          <motion.button
+            className="cursor-pointer"
+            onClick={handleToggle}
+            aria-label="toggle"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -55,6 +59,7 @@ const ToggleView = ({ handleToggle, layout }) => {
             className="cursor-pointer"
             onClick={handleToggle}
             whileTap="tapping"
+            aria-label="toggle"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

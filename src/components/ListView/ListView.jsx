@@ -41,7 +41,10 @@ const Product = ({
             />
           </div>
           <div>
-            <button className="px-6 py-1 lg:px-6 lg:py-3 bg-[#171717] text-white font-semibold hover:bg-gray-200 hover:text-red-500 transition-all rounded-lg">
+            <button
+              className="px-6 py-1 lg:px-6 lg:py-3 bg-[#171717] text-white font-semibold hover:bg-gray-200 hover:text-red-500 transition-all rounded-lg"
+              aria-label="details-page"
+            >
               <DetailsPageComponent recipe={id} />
             </button>
           </div>

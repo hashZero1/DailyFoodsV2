@@ -51,7 +51,7 @@ const RandomizedRecipe = () => {
           className=" w-full md:max-w-md lg:max-w-4xl m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow-sm"
         >
           <div className="flex p-2 lg:p-3 relative">
-            <button>
+            <button aria-label="add-recipe">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 onClick={() => {

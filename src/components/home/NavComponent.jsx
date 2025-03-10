@@ -22,7 +22,6 @@ export default function NavComponent() {
       const { user } = await signInWithGooglePopup();
       await createUserDocumentFromAuth(user);
     } catch (err) {
-      alert("Error! (Login popup closed unexpectedly)");
       console.log(err);
     }
   };
@@ -81,7 +80,7 @@ export default function NavComponent() {
               <Link
                 onClick={signInWithGoogle}
                 className="px-2 lg:px-5 lg:py-4 bg-red-600 text-sm xl:text-base xl:px-10 xl:py-2 rounded-md font-semibold ml-2 flex cursor-pointer items-center gap-x-1 border-red-600  hover:bg-zinc-100 
-              text-gray-200 hover:text-black transition-all"
+              text-white hover:text-black transition-all"
                 to="/"
               >
                 SignIn
