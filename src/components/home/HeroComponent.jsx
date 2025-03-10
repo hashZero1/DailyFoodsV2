@@ -10,7 +10,7 @@ const HeroComponent = () => {
       className="min-h-svh "
       style={{
         background:
-          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(/hero.jpg) ",
+          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(src/assets/hero.jpg) ",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
