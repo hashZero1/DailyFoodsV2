@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import uuid from "react-uuid";
-import { motion as m } from "framer-motion";
 import { AuthContext } from "../../context/AuthContext";
 import DetailsPageComponent from "./DetailsPageComponent";
 
@@ -109,7 +108,7 @@ export const Cart = ({ toggle, handleToggle }) => {
                         </div>
                         <div className="m-4 flex justify-evenly">
                           <button
-                            className=" w-full p-0 py-2 bg-red-600 text-white font-semibold hover:bg-gray-50 hover:text-black rounded-xl hover:border-0"
+                            className=" w-full p-0 py-2 bg-red-600 text-white font-semibold hover:bg-gray-200 cursor-pointer hover:text-black rounded-xl hover:border-0"
                             aria-label="details-page"
                           >
                             <DetailsPageComponent recipe={item} />
@@ -117,7 +116,7 @@ export const Cart = ({ toggle, handleToggle }) => {
 
                           <button
                             onClick={() => deleteItemCart(item)}
-                            className="ml-4 w-full bg-gray-50 text-black font-semibold hover:bg-red-600 hover:text-white rounded-xl hover:border-0"
+                            className="ml-4 w-full bg-gray-200 text-black cursor-pointer font-semibold hover:bg-black hover:text-white rounded-xl hover:border-0"
                             aria-label="delete"
                           >
                             Delete

@@ -22,7 +22,7 @@ export default function DetailsPageComponent({ recipe }) {
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/50" />
-        <Drawer.Content className="bg-zinc-100 z-30 text-gray-700 flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0">
+        <Drawer.Content className="bg-zinc-100 z-50 text-gray-700 flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0">
           <div className="pt-2 lg:p-4 bg-white overflow-y-scroll no-scrollbar rounded-t-[10px] flex-1">
             <div className="mx-auto w-24 h-1.5 shrink-0 rounded-full bg-red-400 mb-8 cursor-grab" />
             <div className="flex flex-col justify-center p-4 lg:p-10 max-w-[90rem] mx-auto rounded-t-[10px]">
