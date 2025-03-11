@@ -10,89 +10,134 @@ export const Cart = ({ toggle, handleToggle }) => {
   const { currentUser } = useContext(AuthContext);
 
   return (
-    <m.aside
-      initial={{ opacity: 0, x: 200 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 200 }}
-      className="fixed w-screen h-screen z-20 -top-10 -right-5 lg:h-[90vh] lg:top-10 lg:left-[45em] 2xl:left-[79em] overflow-y-scroll no-scrollbar"
-    >
-      <div className="relative">
-        <div className="m-10 mt-10 p-4 left-0 absolute xl:mt-20 xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-red-100 bg-opacity-90 rounded-br-xl rounded-bl-xl transition-all shadow-md">
-          <div className="absolute p-2 top-0 left-0 xl:-left-14 lg:bg-red-100 bg-transparent opacity-90 rounded-tl-xl rounded-bl-xl">
-            <svg
+    <>
+      <button
+        className="lg:py-1 hover:rounded-lg hover:text-red-600 hover:ring-0 hover:bg-white"
+        initial={{ opacity: 0, x: 200 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 200 }}
+        onClick={() => handleToggle(!toggle)}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 lg:h-6 lg:w-6 m-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+      {toggle ? (
+        <main
+          className={
+            " fixed overflow-hidden bg-gray-800/40  z-40 bg-opacity-25 inset-0 transform ease-in-out " +
+            (toggle
+              ? " transition-opacity  opacity-100 duration-500 translate-x-0  "
+              : " transition-all  delay-500 opacity-0 translate-x-full  ")
+          }
+        >
+          <section
+            className={
+              " w-screen max-w-lg right-0 absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+              (toggle ? " translate-x-0 " : " translate-x-full ")
+            }
+          >
+            <button
+              className="p-4 m-4 bg-gray-200 cursor-pointer hover:bg-red-500 rounded-full hover:text-red-100 hover:ring-0 "
+              initial={{ opacity: 0, x: 200 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 200 }}
               onClick={() => handleToggle(!toggle)}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="cursor-pointer text-black rounded-full w-10 h-10"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-          {cartItems.length === 0 ? (
-            <div className="mt-10 text-xl" key={uuid()}>
-              <h1 className="p-2 mt-2 font-semibold text-xl">
-                {currentUser ? (
-                  <h1 className="text-2xl">Hi, {currentUser.displayName} 👀</h1>
-                ) : null}
-                Your list is empty.
-              </h1>
-              <p className="p-2">
-                Your favourite recipe is waiting. Hurry up – and start saving
-                your favourite recipes, So you can enjoy making it later.
-              </p>
-            </div>
-          ) : (
-            <div className="pt-10 w-[74vw] xl:w-full">
-              {cartItems.map((item) => {
-                const { id, title, image } = item;
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-6"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+            <div className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll no-scrollbar h-full">
+              {cartItems.length === 0 ? (
+                <div className="mt-10 text-xl" key={uuid()}>
+                  <h1 className="p-2 mt-2 font-semibold text-xl">
+                    {currentUser ? (
+                      <h1 className="text-2xl">
+                        Hi, {currentUser.displayName} 👀
+                      </h1>
+                    ) : null}
+                    Your list is empty.
+                  </h1>
+                  <p className="p-2">
+                    Your favourite recipe is waiting. Hurry up – and start
+                    saving your favourite recipes, So you can enjoy making it
+                    later.
+                  </p>
+                </div>
+              ) : (
+                <div className="pt-10 w-full xl:w-full">
+                  {cartItems.map((item) => {
+                    const { id, title, image } = item;
 
-                return (
-                  <div
-                    className="flex flex-col mx-2 my-4 p-2 bg-red-200 shadow-md rounded-xl"
-                    key={id}
-                  >
-                    <div className="flex flex-col-reverse ">
-                      <div className="w-40 ">
-                        <img
-                          className="w-full rounded-xl object-fill"
-                          src={image}
-                          alt={image}
-                        />
-                      </div>
-                      <div className="my-2 w-full">
-                        <h3 className="mb-2 text-xl font-semibold">{title}</h3>
-                      </div>
-                    </div>
-                    <div className="m-4 flex justify-evenly">
-                      <button
-                        className=" w-full p-0 bg-red-600 text-white font-semibold hover:bg-gray-50 hover:text-black rounded-xl hover:border-0"
-                        aria-label="details-page"
+                    return (
+                      <div
+                        className="flex flex-col mx-2 my-4 p-2 bg-white shadow-md rounded-xl"
+                        key={id}
                       >
-                        <DetailsPageComponent recipe={item} />
-                      </button>
+                        <div className="flex flex-col-reverse ">
+                          <div className="w-[30%] ">
+                            <img
+                              className="w-full rounded-xl object-fill"
+                              src={image}
+                              alt={image}
+                            />
+                          </div>
+                          <div className="my-2 w-full">
+                            <h3 className="mb-2 text-xl font-semibold">
+                              {title}
+                            </h3>
+                          </div>
+                        </div>
+                        <div className="m-4 flex justify-evenly">
+                          <button
+                            className=" w-full p-0 py-2 bg-red-600 text-white font-semibold hover:bg-gray-50 hover:text-black rounded-xl hover:border-0"
+                            aria-label="details-page"
+                          >
+                            <DetailsPageComponent recipe={item} />
+                          </button>
 
-                      <button
-                        onClick={() => deleteItemCart(item)}
-                        className="ml-4 w-full bg-gray-50 text-black font-semibold hover:bg-red-600 hover:text-white rounded-xl hover:border-0"
-                        aria-label="delete"
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
+                          <button
+                            onClick={() => deleteItemCart(item)}
+                            className="ml-4 w-full bg-gray-50 text-black font-semibold hover:bg-red-600 hover:text-white rounded-xl hover:border-0"
+                            aria-label="delete"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
-    </m.aside>
+          </section>
+          <section
+            className=" w-screen h-full cursor-pointer "
+            onClick={() => {
+              handleToggle(false);
+            }}
+          ></section>
+        </main>
+      ) : null}
+    </>
   );
 };

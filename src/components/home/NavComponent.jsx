@@ -14,7 +14,7 @@ import logo from "../../assets/logo.webp";
 
 export default function NavComponent() {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const { cartItems } = useContext(CartContext);
 
   const signInWithGoogle = async () => {
@@ -40,38 +40,15 @@ export default function NavComponent() {
               <img className="w-full" src={logo} alt="logo" />
             </Link>
           </div>
-          <div className="ml-2 flex h-9 lg:h-12">
+          <div className=" ml-2 flex h-9 lg:h-12">
             <div
               className={`${
                 cartItems.length
                   ? " bg-white"
                   : "ring-2 ring-gray-800 ring-inset"
-              } flex rounded-lg cursor-pointer items-center  `}
+              } flex rounded-lg cursor-pointer items-center relative`}
             >
-              {toggle ? (
-                <motion.div
-                  className="lg:py-1 hover:rounded-lg hover:text-red-600 hover:ring-0 hover:bg-white"
-                  initial={{ opacity: 0, x: 200 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 200 }}
-                  onClick={() => setToggle(!toggle)}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 lg:h-6 lg:w-6 m-2"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </motion.div>
-              ) : (
-                <Cart toggle={toggle} handleToggle={setToggle} />
-              )}
+              <Cart toggle={toggle} handleToggle={setToggle} />
             </div>
 
             {currentUser ? (
