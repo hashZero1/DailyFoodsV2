@@ -1,6 +1,6 @@
 # React + Vite
 
-## DailyFoods A Recipe finder webapp where you can search and find your favourite recipe.
+## DailyFoods A Recipe finder Web App where you can search and find your favourite recipe.
 
 # Steps to initialize this project
 
