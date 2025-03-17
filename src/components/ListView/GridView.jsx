@@ -16,7 +16,7 @@ const Product = ({
   notify,
 }) => {
   return (
-    <div class="relative flex flex-col justify-between m-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full md:w-[40%] xl:w-96">
+    <div className="relative flex flex-col justify-between m-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full md:w-[40%] xl:w-96">
       <div>
         <button
           onClick={() => {
@@ -38,11 +38,11 @@ const Product = ({
             />
           </svg>
         </button>
-        <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+        <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
           <img className="w-full object-cover" src={productImage} alt={title} />
         </div>
-        <div class="p-4">
-          <div class="mb-4 flex flex-wrap md:flex-nowrap">
+        <div className="p-4">
+          <div className="mb-4 flex flex-wrap md:flex-nowrap">
             <span className="rounded-full mr-1 bg-green-600 capitalize py-0.5 px-2.5 h-[22px] border border-transparent text-xs text-white mb-1 md:mb-0 transition-all shadow-sm  text-center">
               {diet[0]}
             </span>
@@ -50,9 +50,9 @@ const Product = ({
               {diet[1]}
             </span>
           </div>
-          <h6 class="mb-2 text-slate-700 text-xl font-bold">{title}</h6>
+          <h6 className="mb-2 text-slate-700 text-xl font-bold">{title}</h6>
           <p
-            class="text-gray-500 leading-normal font-md"
+            className="text-gray-500 leading-normal font-md"
             dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(description.slice(0, 120) + "...."),
             }}
@@ -60,7 +60,7 @@ const Product = ({
         </div>
       </div>
 
-      <div class=" p-4">
+      <div className=" p-4">
         <button
           className="px-6 py-1 lg:px-6 lg:py-3 bg-[#171717] text-white font-semibold hover:bg-gray-200 hover:text-red-500 transition-all rounded-lg"
           aria-label="details-page"

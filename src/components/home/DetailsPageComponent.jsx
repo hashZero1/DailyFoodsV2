@@ -1,4 +1,5 @@
 import { Drawer } from "vaul";
+import DOMPurify from "dompurify";
 
 export default function DetailsPageComponent({ recipe }) {
   const StepInstructions = () => {
@@ -62,9 +63,16 @@ export default function DetailsPageComponent({ recipe }) {
                 <h2 className="font-black text-gray-400 mb-2 text-xl lg:text-4xl mt-5 lg:mt-8">
                   Instructions :
                 </h2>
-                <p className=" leading-relaxed tracking-wide lg:text-lg ">
-                  {!recipe.instructions ? "Not Available" : recipe.instructions}
-                </p>
+                <p
+                  className="leading-relaxed tracking-wide lg:text-lg "
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(
+                      recipe.instructions
+                        ? recipe.instructions
+                        : "Not Available"
+                    ),
+                  }}
+                />
                 <h3 className="mb-2 font-black text-gray-400 mt-8 text-lg lg:text-2xl">
                   Step by Steps Intructions :
                 </h3>
@@ -77,7 +85,6 @@ export default function DetailsPageComponent({ recipe }) {
                 </ul>
               </div>
             </div>
-            {/* <div className="mx-auto w-40 h-1.5 shrink-0 rounded-full bg-zinc-300  my-2" /> */}
           </div>
         </Drawer.Content>
       </Drawer.Portal>
