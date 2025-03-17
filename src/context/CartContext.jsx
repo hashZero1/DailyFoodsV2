@@ -6,6 +6,7 @@ const dialogue = [
   { head: "Order Confirmation ?" },
   { head: "You need to Login to Place Order" },
 ];
+
 //helper to function to find the product
 //FUNCTION TO INCREASE ITEM FROM CART
 const addCartItem = (cartItems, productToAdd) => {
@@ -54,8 +55,18 @@ export const CartContext = createContext({
 });
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  // Modified to initialize cartItems from localStorage if available
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCartItems = localStorage.getItem("cartItems");
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
+
   const [cartTotal, setCartTotal] = useState(0);
+
+  // Update localStorage whenever cartItems changes
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   //to get the total price by comparing quantity
   useEffect(() => {
@@ -68,7 +79,7 @@ export const CartProvider = ({ children }) => {
 
   //for toast notification
   const notify = () => {
-    toast('🥧 Recipe added to your favourites!', {
+    toast("🥧 Recipe added to your favourites!", {
       position: "bottom-center",
       autoClose: 2000,
       hideProgressBar: true,
@@ -77,7 +88,7 @@ export const CartProvider = ({ children }) => {
       draggable: true,
       progress: undefined,
       theme: "dark",
-      });
+    });
   };
 
   //adding or removing item to cart using helper function

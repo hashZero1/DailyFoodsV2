@@ -11,7 +11,7 @@ export const Cart = ({ toggle, handleToggle }) => {
   return (
     <>
       <button
-        className="lg:py-1 hover:rounded-lg hover:text-red-600 hover:ring-0 hover:bg-white"
+        className="lg:py-1 hover:rounded-lg cursor-pointer hover:text-red-600 hover:ring-0 hover:bg-white"
         initial={{ opacity: 0, x: 200 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 200 }}

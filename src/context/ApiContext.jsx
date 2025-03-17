@@ -70,27 +70,27 @@ export const ApiProvider = ({ children }) => {
 
   //give random recipe on click
 
-  // useEffect(() => {
-  //   async function randomNum() {
-  //     const number = Math.floor(Math.random() * 50000) + 1000;
-  //     setRandomNumber(number);
-  //   }
-  //   randomNum();
-  // }, []);
+  useEffect(() => {
+    async function randomNum() {
+      const number = Math.floor(Math.random() * 50000) + 1000;
+      setRandomNumber(number);
+    }
+    randomNum();
+  }, []);
 
-  // useEffect(() => {
-  //   async function randomSearch() {
-  //     try {
-  //       const response = await axios.get(
-  //         `https://api.spoonacular.com/recipes/${randomNumber}/information?apiKey=${apikey}`
-  //       );
-  //       setRandomRecipe(response.data);
-  //     } catch (e) {
-  //       toastNotification("Sorry Item not Available");
-  //     }
-  //   }
-  //   randomSearch();
-  // }, [randomNumber]);
+  useEffect(() => {
+    async function randomSearch() {
+      try {
+        const response = await axios.get(
+          `https://api.spoonacular.com/recipes/${randomNumber}/information?apiKey=${apikey}`
+        );
+        setRandomRecipe(response.data);
+      } catch (e) {
+        toastNotification("Sorry Item not Available");
+      }
+    }
+    randomSearch();
+  }, [randomNumber]);
 
   const values = {
     randomData,

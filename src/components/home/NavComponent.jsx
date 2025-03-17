@@ -46,7 +46,7 @@ export default function NavComponent() {
                 cartItems.length
                   ? " bg-white"
                   : "ring-2 ring-gray-800 ring-inset"
-              } flex rounded-lg cursor-pointer items-center relative`}
+              } flex rounded-lg  items-center relative`}
             >
               <Cart toggle={toggle} handleToggle={setToggle} />
             </div>
