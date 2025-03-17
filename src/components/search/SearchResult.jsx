@@ -1,7 +1,3 @@
-import { motion } from "framer-motion";
-import { ApiContext } from "../../context/ApiContext";
-import { useContext } from "react";
-import DetailsPageComponent from "../home/DetailsPageComponent";
 import NavComponent from "../home/NavComponent";
 import FooterComponent from "../home/FooterComponent";
 import RecipeLayout from "../ListView/Index";

@@ -2,7 +2,6 @@ import React from "react";
 import DOMPurify from "dompurify";
 import DetailsPageComponent from "../home/DetailsPageComponent";
 import ErrorScreen from "../skeletons/ErrorScreen";
-import path from "path";
 import { useLocation } from "react-router-dom";
 
 const Product = ({

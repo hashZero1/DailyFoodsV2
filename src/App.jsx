@@ -1,11 +1,7 @@
-import Routers from "./Routes/Routes"
-
-import HomeComponent from "./components/home/HomeComponent"
+import Routers from "./Routes/Routes";
 
 function App() {
-  return(
-    <Routers/>
-  )
+  return <Routers />;
 }
 
-export default App
+export default App;
