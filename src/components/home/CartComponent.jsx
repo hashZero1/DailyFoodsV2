@@ -11,7 +11,7 @@ export const Cart = ({ toggle, handleToggle }) => {
   return (
     <>
       <button
-        className="lg:py-1 hover:rounded-lg cursor-pointer hover:text-red-600 hover:ring-0 hover:bg-white"
+        className="px-2 lg:px-4 h-full hover:rounded-lg cursor-pointer hover:text-red-600 hover:ring-0 hover:bg-white"
         initial={{ opacity: 0, x: 200 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 200 }}
@@ -19,7 +19,7 @@ export const Cart = ({ toggle, handleToggle }) => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 lg:h-6 lg:w-6 m-2"
+          className="size-6"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
