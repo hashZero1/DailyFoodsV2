@@ -65,25 +65,28 @@ export const Cart = ({ toggle, handleToggle }) => {
                 />
               </svg>
             </button>
-            <div className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll no-scrollbar h-full">
+            <div className="relative w-screen max-w-lg pb-10 flex flex-col space-y-2 px-4 overflow-y-scroll no-scrollbar h-full">
               {cartItems.length === 0 ? (
-                <div className="mt-10 text-xl" key={uuid()}>
-                  <h1 className="p-2 mt-2 font-semibold text-xl">
+                <>
+                  <div
+                    key={uuid()}
+                    className="p-2 mt-2 font-black text-2xl text-gray-400"
+                  >
                     {currentUser ? (
-                      <h1 className="text-2xl">
-                        Hi, {currentUser.displayName} 👀
-                      </h1>
-                    ) : null}
-                    Your list is empty.
-                  </h1>
-                  <p className="p-2">
-                    Your favourite recipe is waiting. Hurry up – and start
-                    saving your favourite recipes, So you can enjoy making it
-                    later.
+                      <h1>Hi, {currentUser.displayName} 👀</h1>
+                    ) : (
+                      "Your list is empty."
+                    )}
+                  </div>
+                  <p className="p-2 text-xl">
+                    Your favorite recipe is just around the corner! Don't
+                    wait—start saving your favorite recipes now so you can whip
+                    them up and enjoy them later.
+                    <br /> Happy cooking!
                   </p>
-                </div>
+                </>
               ) : (
-                <div className="pt-10 w-full xl:w-full">
+                <div className="pt-10 px-5 w-full xl:w-full">
                   {cartItems.map((item) => {
                     const { id, title, image } = item;
 
