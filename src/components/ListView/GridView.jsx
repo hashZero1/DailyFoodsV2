@@ -38,7 +38,11 @@ const Product = ({
           </svg>
         </button>
         <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-          <img className="w-full object-cover" src={productImage} alt={title} />
+          <img
+            className="w-full object-cover"
+            src={productImage}
+            alt={title || "not-available"}
+          />
         </div>
         <div className="p-4">
           <div className="mb-4 flex flex-wrap md:flex-nowrap">

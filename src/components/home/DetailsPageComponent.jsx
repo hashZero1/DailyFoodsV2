@@ -32,7 +32,7 @@ export default function DetailsPageComponent({ recipe }) {
                   <img
                     className="w-full rounded-xl"
                     src={recipe.image}
-                    alt={recipe.title}
+                    alt={recipe.title || "not-available"}
                   />
                 </div>
                 <div>

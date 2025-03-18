@@ -47,7 +47,7 @@ const RandomizedRecipe = () => {
       <div className="flex justify-center mt-10">
         <motion.div
           whileHover={{ scale: 1.02 }}
-          key={randomRecipe.id}
+          key={randomRecipe?.id}
           className=" w-full md:max-w-md lg:max-w-4xl m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow-sm"
         >
           <div className="flex p-2 lg:p-3 relative">
@@ -72,20 +72,20 @@ const RandomizedRecipe = () => {
             <div className="rounded-lg w-[50%] lg:w-80">
               <img
                 className="w-full h-full object-contain rounded-lg"
-                src={randomRecipe.image}
-                alt={randomRecipe.title}
+                src={randomRecipe?.image}
+                alt={randomRecipe?.title || "not-available"}
               />
             </div>
             <div className="min-h-min px-2 lg:p-5">
-              <h5 className="mb-2 text-lg lg:text-xl font-bold tracking-normal text-gray-700">
-                {randomRecipe.title ? randomRecipe.title : "Not available"}
-              </h5>
+              <h2 className="mb-2 text-lg lg:text-xl font-bold tracking-normal text-gray-700">
+                {randomRecipe?.title ? randomRecipe?.title : "Not available"}
+              </h2>
               <p className="my-2 lg:my-4 h-10 overflow-y-auto no-scrollbar font-normal text-gray-700 dark:text-gray-600">
-                {time} {randomRecipe.readyInMinutes} minutes
+                {time} {randomRecipe?.readyInMinutes} minutes
               </p>
               <div className="text-gray-700">
                 <b className="mt-5">Total servings</b>
-                <p>{randomRecipe.servings}</p>
+                <p>{randomRecipe?.servings}</p>
               </div>
             </div>
           </div>

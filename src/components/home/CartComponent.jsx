@@ -16,6 +16,7 @@ export const Cart = ({ toggle, handleToggle }) => {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 200 }}
         onClick={() => handleToggle(!toggle)}
+        aria-label="list-button"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +101,7 @@ export const Cart = ({ toggle, handleToggle }) => {
                             <img
                               className="w-full rounded-xl object-fill"
                               src={image}
-                              alt={image}
+                              alt={image || "not-available"}
                             />
                           </div>
                           <div className="my-2 w-full">

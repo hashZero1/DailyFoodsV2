@@ -36,7 +36,7 @@ export default function NavComponent() {
         <div className="flex justify-between">
           <div className="flex items-center ">
             <Link to="/" className=" cursor-pointer w-[7.7em] lg:w-[10em] ">
-              <img className="w-full" src={logo} alt="logo" />
+              <img className="w-full h-fit" src={logo} alt="logo" />
             </Link>
           </div>
           <div className=" ml-2 flex h-9 lg:h-12">
