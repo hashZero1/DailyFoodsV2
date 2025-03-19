@@ -1,19 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import DOMPurify from "dompurify";
 import DetailsPageComponent from "../home/DetailsPageComponent";
 import ErrorScreen from "../skeletons/ErrorScreen";
 import { useLocation } from "react-router-dom";
 
-const Product = ({
-  key,
-  id,
-  title,
-  description,
-  diet,
-  productImage,
-  addItemToCart,
-  notify,
-}) => {
+const Product = ({ key, id, title, description, diet, productImage }) => {
   return (
     <div className="xl:max-w-[90%] 2xl:max-w-[90rem] mx-auto">
       <div className="my-5 p-2 flex rounded-xl    transition-all  hover:shadow-md  ">
@@ -82,4 +73,4 @@ const ListView = ({ bulkRecipe, addItemToCart, notify, searchData }) => {
   );
 };
 
-export default ListView;
+export default memo(ListView);

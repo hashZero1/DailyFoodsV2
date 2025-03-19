@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import DOMPurify from "dompurify";
 import DetailsPageComponent from "../home/DetailsPageComponent";
 import ErrorScreen from "../skeletons/ErrorScreen";
@@ -103,4 +103,4 @@ const GridView = ({ bulkRecipe, addItemToCart, notify, searchData }) => {
   );
 };
 
-export default GridView;
+export default memo(GridView);

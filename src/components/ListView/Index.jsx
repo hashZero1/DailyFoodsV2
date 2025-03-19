@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { memo, useContext, useState } from "react";
 import ToggleView from "./ToggleView";
 import ListView from "./ListView";
 import GridView from "./GridView";
@@ -41,4 +41,4 @@ const RecipeLayout = ({ bulkRecipe, dt }) => {
   );
 };
 
-export default RecipeLayout;
+export default memo(RecipeLayout);
