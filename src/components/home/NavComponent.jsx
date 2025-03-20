@@ -42,7 +42,7 @@ export default function NavComponent() {
           <div className=" ml-2 flex h-9 lg:h-12">
             <div
               className={`${
-                cartItems.length ? " bg-white" : "bg-gray-300"
+                cartItems.length ? " bg-white" : "bg-gray-900/50 text-gray-100"
               } flex rounded-lg items-center relative`}
             >
               <Cart toggle={toggle} handleToggle={setToggle} />
