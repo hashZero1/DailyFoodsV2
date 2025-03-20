@@ -7,8 +7,8 @@ import { useLocation } from "react-router-dom";
 const Product = ({ key, id, title, description, diet, productImage }) => {
   return (
     <div className="xl:max-w-[90%] 2xl:max-w-[90rem] mx-auto">
-      <div className="my-5 p-2 flex rounded-xl    transition-all  hover:shadow-md  ">
-        <div className="flex justify-center items-center mr-6 lg:w-[40%] 2xl:w-[30%]">
+      <div className="my-5 p-2 flex flex-col justify-center lg:flex-row rounded-xl  transition-all  hover:shadow-md  border-b">
+        <div className="flex justify-center items-center mr-0 mb-4 lg:mb-0 lg:mr-6 lg:w-[40%] 2xl:w-[30%]">
           <img className="w-full rounded-xl" src={productImage} alt={title} />
         </div>
         <div className=" flex flex-col justify-around">
