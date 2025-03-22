@@ -4,7 +4,6 @@ import ListView from "./ListView";
 import GridView from "./GridView";
 import { CartContext } from "../../context/CartContext";
 import { ApiContext } from "../../context/ApiContext";
-import NavComponent from "../home/NavComponent";
 
 const RecipeLayout = ({ bulkRecipe, dt }) => {
   const [layout, setLayout] = useState(true);

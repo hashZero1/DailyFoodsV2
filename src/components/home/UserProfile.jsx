@@ -1,43 +1,49 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Avatar, Dropdown } from "flowbite-react";
+import avatarImg from "../../assets/man.webp";
 
 export default function UserProfile({ signOutHandler }) {
   const { currentUser } = useContext(AuthContext);
+  const [toggle, setToggle] = useState(false);
 
   const reload = () => window.location.reload();
   return (
-    <div className="bg-opacity-40 bg-white ml-2 rounded-md hover:bg-slate-50">
-      <Dropdown
-        inline
-        label={
-          <Avatar
-            className="h-0 md:h-4 lg:w-15 lg:h-full"
-            img={currentUser.photoURL}
-            rounded
-          />
-        }
-      >
-        <Dropdown.Header>
-          <span className="block text-gray-600 text-sm font-semibold">
-            {currentUser.displayName}
-          </span>
-          <span className="block text-gray-500 truncate text-sm font-medium">
-            {currentUser.email}
-          </span>
-        </Dropdown.Header>
-        <Link
-          className="block m-2 rounded-md px-4 py-2 text-sm font-semibold bg-red-500 text-white hover:bg-red-700 "
-          onClick={() => {
-            signOutHandler();
-            reload();
-          }}
-          to="/"
+    <div className="relative px-1 border ml-5 bg-gray-50 rounded-full">
+      <button type="button" onClick={() => setToggle(!toggle)}>
+        <img
+          className="w-10 h-10 rounded-full cursor-pointer"
+          src={avatarImg}
+          alt="User dropdown"
+        />
+      </button>
+
+      {toggle ? (
+        <div
+          id="userDropdown"
+          className="z-10 absolute mt-2 -right-5 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-54 dark:bg-gray-700 dark:divide-gray-600"
         >
-          SignOut
-        </Link>
-      </Dropdown>
+          <div className="px-3 py-3 text-sm text-gray-50 ">
+            <h1> {currentUser.displayName}</h1>
+            <span className="block text-gray-400 truncate text-sm font-medium">
+              {currentUser.email}
+            </span>
+          </div>
+
+          <div className="py-1">
+            <Link
+              className="block m-2 rounded-md px-4 py-2 text-sm font-semibold bg-red-500 text-white hover:bg-red-700 "
+              onClick={() => {
+                signOutHandler();
+                reload();
+              }}
+              to="/"
+            >
+              SignOut
+            </Link>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

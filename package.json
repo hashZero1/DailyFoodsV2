@@ -15,7 +15,6 @@
     "dompurify": "^3.2.4",
     "dotenv": "^16.4.5",
     "firebase": "^10.8.1",
-    "flowbite-react": "^0.7.3",
     "framer-motion": "^11.0.8",
     "lottie-react": "^2.4.1",
     "react": "^18.2.0",

@@ -79,7 +79,7 @@ export const Cart = ({ toggle, handleToggle }) => {
                       "Your list is empty."
                     )}
                   </div>
-                  <p className="p-2 text-xl">
+                  <p className="p-2 text-xl text-gray-800">
                     Your favorite recipe is just around the corner! Don't
                     wait—start saving your favorite recipes now so you can whip
                     them up and enjoy them later.
